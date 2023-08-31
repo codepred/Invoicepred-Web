@@ -1,0 +1,38 @@
+{
+    "pageTitle": "Invoice generator",
+    "invoiceTerms": {
+        "invoice": "Invoice",
+        "number": "Invoice number",
+        "issueDate": "Issue date",
+        "placeOfIssue": "Place of issue",
+        "saleDate": "Sale date",
+        "sellerTitle": "Seller",
+        "sellerData": "Seller data",
+        "sellerBank": "Bank name",
+        "sellerAccountNumber": "Account number",
+        "buyerTitle": "Buyer",
+        "buyerData": "Buyer data",
+        "notes": "Notes"
+    },
+    "invoiceItems": {
+        "title": "Items",
+        "itemName": "Name",
+        "quantity": "Quantity",
+        "unit": "Unit",
+        "priceNetto": "Net value",
+        "vat": "VAT (%)",
+        "priceBrutto": "Gross value",
+        "addNewItem": "Add new item"
+    },
+    "paymentTerms": {
+        "typeOfPayment": "Payment method",
+        "dueDate": "Due date",
+        "vatExemptionReason": "Reason for VAT exemption"
+    },
+    "paymentValues": {
+        "nettoValue": "Net value",
+        "vatValue": "VAT value",
+        "grossValue": "Gross value"
+    }
+
+}
