@@ -1,0 +1,62 @@
+:root {
+  --main-orange: #EC6D5B;
+  --main-blue: #407BFF;
+}
+
+body {
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+  font-family: 'Work Sans', sans-serif;
+  color: #263238;
+  font-size: 14px;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+.input-class {
+  width: 100%;
+  height: 56px;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #B9B9D1;
+}
+
+.title-text {
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.bold-text {
+  font-weight: 700;
+}
+
+textarea {
+  resize: none;
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+
+@media (max-width: 1000px) {
+  .display-desktop {
+    display: none !important;
+  }
+} 
+
+@media (min-width: 1001px) {
+  .display-mobile {
+    display: none !important;
+  }
+} 
