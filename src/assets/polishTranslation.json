@@ -4,8 +4,11 @@
         "invoice": "Invoice",
         "number": "Invoice number",
         "issueDate": "Issue date",
-        "placeOfIssue": "Place of issue",
         "saleDate": "Sale date",
+        "placeOfIssue": "Place of issue",
+        "dueDate": "Due date",
+        "paymentMethod": "Payment method",
+        "differentIssueDate": "Issue date different than sale date",
         "sellerTitle": "Seller",
         "sellerData": "Seller data",
         "sellerBank": "Bank name",
@@ -19,10 +22,12 @@
         "itemName": "Name",
         "quantity": "Quantity",
         "unit": "Unit",
-        "priceNetto": "Net value",
+        "priceUnitNetto": "Net unit value",
         "vat": "VAT (%)",
+        "priceNetto": "VAT value",
         "priceBrutto": "Gross value",
-        "addNewItem": "Add new item"
+        "addNewItem": "Add new item",
+        "limitOfItems": "Maximum number of items is 15"
     },
     "paymentTerms": {
         "typeOfPayment": "Payment method",
@@ -33,6 +38,8 @@
         "nettoValue": "Net value",
         "vatValue": "VAT value",
         "grossValue": "Gross value"
-    }
+    },
+    "downloadPaymentButton": "Download",
+    "downloadPaymentButtonInProgress": "Downloading..."
 
 }
