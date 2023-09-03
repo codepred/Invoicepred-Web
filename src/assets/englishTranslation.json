@@ -1,11 +1,14 @@
 {
     "pageTitle": "Invoice generator",
     "invoiceTerms": {
-        "invoice": "Faktura",
+        "invoice": "Invoice",
         "number": "Invoice number",
         "issueDate": "Issue date",
-        "placeOfIssue": "Place of issue",
         "saleDate": "Sale date",
+        "placeOfIssue": "Place of issue",
+        "dueDate": "Due date",
+        "paymentMethod": "Payment method",
+        "differentIssueDate": "Issue date different than sale date",
         "sellerTitle": "Seller",
         "sellerData": "Seller data",
         "sellerBank": "Bank name",
@@ -15,13 +18,16 @@
         "notes": "Notes"
     },
     "invoiceItems": {
+        "title": "Items",
         "itemName": "Name",
         "quantity": "Quantity",
         "unit": "Unit",
-        "priceNetto": "Net value",
-        "vat": "VAT",
+        "priceUnitNetto": "Net unit value",
+        "vat": "VAT (%)",
+        "priceNetto": "VAT value",
         "priceBrutto": "Gross value",
-        "addNewItem": "Dodaj nową pozycję"
+        "addNewItem": "Add new item",
+        "limitOfItems": "Maximum number of items is 15"
     },
     "paymentTerms": {
         "typeOfPayment": "Payment method",
@@ -32,6 +38,7 @@
         "nettoValue": "Net value",
         "vatValue": "VAT value",
         "grossValue": "Gross value"
-    }
-
+    },
+    "downloadPaymentButton": "Download",
+    "downloadPaymentButtonInProgress": "Downloading..."
 }
