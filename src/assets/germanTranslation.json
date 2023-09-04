@@ -1,46 +1,46 @@
 {
-    "pageTitle": "Kreator faktur",
+    "pageTitle": "Rechnungsgenerator",
     "invoiceTerms": {
-        "invoice": "Faktura",
-        "number": "Numer faktury",
-        "issueDate": "Data wystawienia",
-        "saleDate": "Data sprzedaży",
-        "placeOfIssue": "Miejsce wystawienia",
-        "dueDate": "Termin płatności",
-        "paymentMethod": "Metoda płatności",
-        "differentIssueDate": "Data wystawienia różni się od daty sprzedaży",
-        "sellerTitle": "Sprzedawca",
-        "sellerData": "Dane sprzedawcy",
-        "sellerBank": "Nazwa banku",
-        "sellerAccountNumber": "Numer konta",
-        "buyerTitle": "Nabywca",
-        "buyerData": "Dane nabywcy",
-        "notes": "Uwagi"
+        "invoice": "Rechnung",
+        "number": "Rechnungsnummer",
+        "issueDate": "Ausgabedatum",
+        "saleDate": "Verkaufsdatum",
+        "placeOfIssue": "Ort der Ausgabe",
+        "dueDate": "Fälligkeitsdatum",
+        "paymentMethod": "Payment method",
+        "differentIssueDate": "Ausstellungsdatum weicht vom Verkaufsdatum ab",
+        "sellerTitle": "Verkäufertitel",
+        "sellerData": "Verkäuferdaten",
+        "sellerBank": "Bank Name",
+        "sellerAccountNumber": "Kontonummer",
+        "buyerTitle": "Abnehmer",
+        "buyerData": "Abnehmerdaten",
+        "notes": "Anmerkungen"
     },
     "invoiceItems": {
-        "title": "Pozycje",
-        "itemName": "Nazwa",
-        "quantity": "Ilość",
-        "unit": "Jednostka",
-        "priceUnitNetto": "Cena netto jednostki",
+        "title": "Artikel",
+        "itemName": "Artikelname",
+        "quantity": "Menge",
+        "unit": "Einheit",
+        "priceUnitNetto": "Netto-Einheitswert",
         "vat": "VAT (%)",
-        "priceNetto": "Wartość VAT",
-        "priceBrutto": "Wartość brutto",
-        "addNewItem": "Dodaj nową pozycję",
-        "limitOfItems": "Maksymalna ilość pozycji to 15"
+        "priceNetto": "Nettowert",
+        "priceBrutto": "Bruttowert",
+        "addNewItem": "Füge neuen Gegenstand hinzu",
+        "limitOfItems": "Die maximale Anzahl an Artikeln beträgt 15"
     },
     "paymentTerms": {
-        "typeOfPayment": "Metoda płatności",
-        "dueDate": "Termin płatności",
-        "vatExemptionReason": "Podstawa zwolnienia z VAT"
+        "typeOfPayment": "Bezahlverfahren",
+        "dueDate": "Fälligkeitsdatum",
+        "vatExemptionReason": "Grund für die VAT Befreiung"
     },
     "paymentValues": {
-        "nettoValue": "Wartość netto",
-        "vatValue": "Wartość VAT",
-        "grossValue": "Wartość brutto"
+        "nettoValue": "Nettowert",
+        "vatValue": "VAT wert",
+        "grossValue": "Bruttowert"
     },
-    "downloadPaymentButton": "Pobierz",
-    "downloadPaymentButtonInProgress": "Pobieranie...",
+    "downloadPaymentButton": "Download",
+    "downloadPaymentButtonInProgress": "Downloading...",
     "currencyList": [
         {
             "name": "PLN",
@@ -61,21 +61,21 @@
     ],
     "languageList": [
         {
-            "name": "Angielski",
+            "name": "Englisch",
             "value": "EN"
         },
         {
-            "name": "Polski",
+            "name": "Polnisch",
             "value": "PL"
         },
         {
-            "name": "Niemiecki",
+            "name": "Deutsch",
             "value": "DE"
         }
     ],
     "vatRateList": [
         {
-            "name": "zw.",
+            "name": "MWSt.",
             "value": "vatExempt"
         },
         {
@@ -203,4 +203,5 @@
             "value": 30
         }
     ]
+
 }

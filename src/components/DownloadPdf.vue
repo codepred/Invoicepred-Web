@@ -1,6 +1,4 @@
 <script setup lang="ts" allowJs="true">
-import Vue3Html2pdf from 'vue3-html2pdf'
-import html2pdf from 'html2pdf.js';
 import IconDownload from './icons/IconDownload.vue'
 import { ref } from 'vue'
 
@@ -24,28 +22,34 @@ const props = defineProps({
 
 const buttonText = ref<string>(props.useTranslation?.downloadPaymentButton)
 
+props.invoiceSettings?.notes.replace(/\\n/g, '\n')
+props.invoiceSettings?.sellerData.replace(/\\n/g, '\n')
+props.invoiceSettings?.buyerData.replace(/\\n/g, '\n')
+
 </script>
 
-<script lang="ts" allowJs="true">
-import html2pdf from 'html2pdf.js';
+<script lang="ts">
 import Vue3Html2pdf from 'vue3-html2pdf'
+
 
 export default {
     methods: {
         generateReport() {
-            this.$refs.html2Pdf.generatePdf()
+
+            const temp: unknown = this.$refs.html2Pdf;
+            (temp as { generatePdf?: () => unknown })?.generatePdf?.();
+
         },
         hasStartedGeneration() {
 
         },
-        onProgress(event) {
+        onProgress() {
 
         },
-        hasGenerated(event) {
+        hasGenerated() {
 
         }
     },
-
     components: {
         Vue3Html2pdf
     }
@@ -55,14 +59,20 @@ export default {
 
 <template>
     <div>
-        <button class="main-button" style="gap: 10px;" @click="generateReport()">
+        <button class="main-button" style="min-width: 170px; gap: 10px; background-color: #383A4C;"
+            @click="generateReport()">
             <IconDownload />
             {{ buttonText }}
         </button>
+        <!-- eslint-disable-next-line @typescript-eslint/ban-ts-comment -->
+        <!-- @ts-ignore -->
+          <!-- @vue-ignore -->
         <Vue3Html2pdf :show-layout="false" :float-layout="true" :enable-download="true" :preview-modal="false"
-            :paginate-elements-by-height="1400" filename="invoice" :pdf-quality="2" :manual-pagination="false"
-            pdf-format="a4" pdf-orientation="portrait" pdf-content-width="800px" @progress="onProgress($event)"
-            @startPagination="hasStartedGeneration()" @hasDownloaded="hasGenerated($event)" ref="html2Pdf">
+            id="data-loaded" :paginate-elements-by-height="1400"
+            :filename="props.useTranslation?.invoiceTerms?.invoice + '_' + props.invoiceSettings?.number || props.useTranslation?.invoiceTerms?.invoice"
+            :pdf-quality="2" :manual-pagination="false" pdf-format="a4" pdf-orientation="portrait" pdf-content-width="800px"
+            @progress="onProgress()" @startPagination="hasStartedGeneration()" @hasDownloaded="hasGenerated()"
+            ref="html2Pdf">
             <template v-slot:pdf-content>
                 <div style="padding: 60px 48px; width: 100%;">
                     <div style="display: flex; flex-direction: row; gap: 5px; margin-bottom: 10px;">
@@ -86,7 +96,7 @@ export default {
                                 {{ props.useTranslation?.invoiceTerms.dueDate }}:
                             </div>
                             <div>
-                                {{ props.useTranslation?.invoiceTerms?.paymentMethod }}
+                                {{ props.useTranslation?.invoiceTerms?.paymentMethod }}:
                             </div>
                         </div>
                         <div style="flex-direction: column; display: flex; gap: 10px; text-align: right;">
@@ -106,47 +116,47 @@ export default {
                     </div>
                     <div style="display: flex; gap: 10%; margin-top: 50px">
                         <div style="width: 50%">
-                            <div>
-                                {{ props.useTranslation?.sellerTitle }}
+                            <div class="title-text" style="font-weight: 600; font-size: 16px; margin-bottom: 15px; ">
+                                {{ props.useTranslation?.invoiceTerms.sellerTitle }}
                             </div>
-                            <div>
+                            <div style="white-space: pre-line;">
                                 {{ props.invoiceSettings?.sellerData }}
                             </div>
                         </div>
                         <div style="width: 50%">
-                            <div>
-                                {{ props.useTranslation?.buyerTitle }}
+                            <div class="title-text" style="font-weight: 600; font-size: 16px; margin-bottom: 15px; ">
+                                {{ props.useTranslation?.invoiceTerms.buyerTitle }}
                             </div>
-                            <div>
+                            <div style="white-space: pre-line;">
                                 {{ props.invoiceSettings?.buyerData }}
                             </div>
                         </div>
                     </div>
                     <div style="width: 100%; display: flex; justify-content: center; margin-top: 50px;">
                         <table style="width: 100%;">
-                            <thead>
-                                <th style="width: 10px;">
+                            <thead style="font-size: 12px;">
+                                <th style="width: 10px; font-size: 12px;">
                                     Nr
                                 </th>
-                                <th style="width: 25%;">
+                                <th style="width: 25%; font-size: 12px;">
                                     {{ props.useTranslation?.invoiceItems?.itemName }}
                                 </th>
-                                <th style="width: 10%;">
+                                <th style="width: 10%; font-size: 12px;">
                                     {{ props.useTranslation?.invoiceItems?.quantity }}
                                 </th>
-                                <th style="width: 15%;">
+                                <th style="width: 15%; font-size: 12px;">
                                     {{ props.useTranslation?.invoiceItems?.unit }}
                                 </th>
-                                <th style="width: 15%;">
+                                <th style="width: 15%; font-size: 12px;">
                                     {{ props.useTranslation?.invoiceItems?.priceUnitNetto }}
                                 </th>
-                                <th style="width: 10%;">
+                                <th style="width: 10%; font-size: 12px;">
                                     {{ props.useTranslation?.invoiceItems?.vat }}
                                 </th>
-                                <th style="width: 15%;">
+                                <th style="width: 15%; font-size: 12px;">
                                     {{ props.useTranslation?.invoiceItems?.priceNetto }}
                                 </th>
-                                <th style="width: 15%;">
+                                <th style="width: 15%; font-size: 12px;">
                                     {{ props.useTranslation?.invoiceItems?.priceBrutto }}
                                 </th>
                             </thead>
@@ -155,7 +165,7 @@ export default {
                                     <td style="width: 10px;">
                                         {{ index + 1 }}
                                     </td>
-                                    <td>
+                                    <td style="text-align: center;">
                                         {{ item.name }}
                                     </td>
                                     <td>
@@ -211,11 +221,12 @@ export default {
                             </div>
                         </div>
                     </div>
-                    <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 30px;">
+                    <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 30px;"
+                        v-if="props.invoiceSettings?.notes">
                         <div class="title-text">
                             {{ props.useTranslation?.invoiceTerms?.notes }}
                         </div>
-                        <div>
+                        <div style="white-space: pre-line;">
                             {{ props.invoiceSettings?.notes }}
                         </div>
                     </div>
@@ -225,4 +236,9 @@ export default {
     </div>
 </template>
 
-<style></style>
+<style scoped>
+th,
+td {
+    text-align: center;
+}
+</style>
