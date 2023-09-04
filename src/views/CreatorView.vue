@@ -1,16 +1,23 @@
 <script setup lang="ts">
 import CreatorPanel from '../components/CreatorPanel.vue'
 
-import { ref } from 'vue'
-
-const globalCurrency = ref<string>(window?.PICKED_CURRENCY)
+const props = defineProps({
+    chosenCurrency: {
+        type: String,
+        required: true
+    },
+    chosenLanguage: {
+        type: String,
+        required: true
+    }
+})
 
 </script>
 
 <template>
     <div style="padding-bottom: 100px; max-width: 1200px">
         <div style="display: flex; justify-content: center; flex-direction: column; gap: 20px;">
-            <CreatorPanel :currency="globalCurrency"/>
+            <CreatorPanel :currency="props.chosenCurrency" :language="props.chosenLanguage" />
         </div>
     </div>
 </template>

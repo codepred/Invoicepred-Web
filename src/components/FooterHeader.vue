@@ -15,14 +15,22 @@
   footer.desktop-header {
     z-index: 10;
     width: 100%;
-    height: 48px;
-    background-color: var(--main-blue);
+    height: 68px;
+    background-color: #A9AAAE;
     color: #FAFAFA;
+    display: flex;
+    align-items: center;
   }
   
   @media (max-width: 550px) {
     .footer-desktop {
       display: none;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .remove-padding-smartphone {
+      padding: 0px !important;
     }
   }
   

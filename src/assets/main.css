@@ -92,6 +92,10 @@ textarea:focus {
   background-color: #FAFAFA;
 }
 
+.underline-text:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 900px) {
   .display-desktop {
     display: none !important;
@@ -108,3 +112,16 @@ textarea:focus {
     display: none !important;
   }
 } 
+
+.placeholder-text {
+  position: absolute;
+  z-index: 2;
+  font-size: 12px;
+  pointer-events: none;
+  /* color: #7777A4; */
+  padding: 8px 0 0 16px;
+}
+
+.span-bottom {
+  padding: 18px 0px 0px 15px !important;
+}
