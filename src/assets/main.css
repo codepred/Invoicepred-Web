@@ -88,7 +88,9 @@ input:disabled {
 input:hover, 
 input:focus, 
 textarea:hover, 
-textarea:focus {
+textarea:focus,
+select:hover, 
+select:focus {
   background-color: #FAFAFA;
 }
 

@@ -24,7 +24,7 @@
         "unit": "Jednostka",
         "priceUnitNetto": "Cena netto jednostki",
         "vat": "VAT (%)",
-        "priceNetto": "Wartość VAT",
+        "priceNetto": "Wartość netto",
         "priceBrutto": "Wartość brutto",
         "addNewItem": "Dodaj nową pozycję",
         "limitOfItems": "Maksymalna ilość pozycji to 15"
@@ -73,6 +73,7 @@
             "value": "DE"
         }
     ],
+    "vatExemptTranslation": "zw.",
     "vatRateList": [
         {
             "name": "zw.",

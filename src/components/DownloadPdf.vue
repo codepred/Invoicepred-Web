@@ -26,6 +26,8 @@ props.invoiceSettings?.notes.replace(/\\n/g, '\n')
 props.invoiceSettings?.sellerData.replace(/\\n/g, '\n')
 props.invoiceSettings?.buyerData.replace(/\\n/g, '\n')
 
+console.log(props.invoiceSettings)
+
 </script>
 
 <script lang="ts">
@@ -35,7 +37,6 @@ import Vue3Html2pdf from 'vue3-html2pdf'
 export default {
     methods: {
         generateReport() {
-
             const temp: unknown = this.$refs.html2Pdf;
             (temp as { generatePdf?: () => unknown })?.generatePdf?.();
 
@@ -66,7 +67,7 @@ export default {
         </button>
         <!-- eslint-disable-next-line @typescript-eslint/ban-ts-comment -->
         <!-- @ts-ignore -->
-          <!-- @vue-ignore -->
+        <!-- @vue-ignore -->
         <Vue3Html2pdf :show-layout="false" :float-layout="true" :enable-download="true" :preview-modal="false"
             id="data-loaded" :paginate-elements-by-height="1400"
             :filename="props.useTranslation?.invoiceTerms?.invoice + '_' + props.invoiceSettings?.number || props.useTranslation?.invoiceTerms?.invoice"
@@ -83,10 +84,7 @@ export default {
                     <div
                         style="margin-top: 50px; text-align: right; width: 100%; height: fit-content; display: flex; gap: 20px; justify-content: flex-start;">
                         <div style="flex-direction: column; display: flex; text-align: left; gap: 10px">
-                            <div v-if="invoiceSettings?.isIssueDateDifferentThanSaleDate">
-                                {{ props.useTranslation?.invoiceTerms?.issueDate }}:
-                            </div>
-                            <div v-if="!invoiceSettings?.isIssueDateDifferentThanSaleDate">
+                            <div>
                                 {{ props.useTranslation?.invoiceTerms?.issueDate }}:
                             </div>
                             <div>
@@ -103,7 +101,10 @@ export default {
                             <div v-if="invoiceSettings?.isIssueDateDifferentThanSaleDate">
                                 {{ props.invoiceSettings?.issueDate }}
                             </div>
-                            <div v-if="invoiceSettings?.isIssueDateDifferentThanSaleDate">
+                            <div v-if="!invoiceSettings?.isIssueDateDifferentThanSaleDate">
+                                {{ props.invoiceSettings?.saleDate }}
+                            </div>
+                            <div>
                                 {{ props.invoiceSettings?.saleDate }}
                             </div>
                             <div>
@@ -177,7 +178,10 @@ export default {
                                     <td>
                                         {{ item.netUnitValue }}
                                     </td>
-                                    <td>
+                                    <td v-if="item.vatRate === 'vatExempt'">
+                                        {{ props.useTranslation?.vatExemptTranslation }}
+                                    </td>
+                                    <td v-else>
                                         {{ item.vatRate }}
                                     </td>
                                     <td>

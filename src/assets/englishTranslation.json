@@ -73,9 +73,10 @@
             "value": "DE"
         }
     ],
+    "vatExemptTranslation": "ex.",
     "vatRateList": [
         {
-            "name": "zw.",
+            "name": "ex.",
             "value": "vatExempt"
         },
         {
