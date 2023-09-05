@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import IconLogo from './icons/IconLogo.vue';
 import { ref, watch, getCurrentInstance } from 'vue'
 
 const instance = getCurrentInstance()
@@ -30,26 +31,28 @@ watch(chosenLanguage, () => {
 </script>
 
 <template>
-  <header class="desktop-header">
-    <div
-      style="display: flex; width: 100%; height: 100%; margin: auto 0; padding: 0 48px; justify-content: flex-end; gap: 15px;">
-      <div style="width: fit-content">
-        <!-- +48 600 000 000 -->
+  <header class="desktop-header" style="display: flex; justify-content: center;">
+    <div style=" width: 100%; max-width: 1230px; display: flex; margin: 0 auto; height: 100%; display: flex; margin: auto 0; padding: 0px 25px; justify-content: space-between;">
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <IconLogo />
       </div>
-      <div style="display: flex; gap: 20px; align-items: center; width: fit-content;">
-        <select class="input-class" v-model="chosenLanguage" style="height: 40px; padding: 0px 12px;">
-          <option v-for="language in props.languageList" :value="language?.value">
-            {{ language?.name }}
-          </option>
-        </select>
+      <div style="display: flex; gap: 15px;">
+        <div style="display: flex; gap: 20px; align-items: center; width: fit-content;">
+          <select class="input-class" v-model="chosenLanguage" style="height: 40px; padding: 0px 12px;">
+            <option v-for="language in props.languageList" :value="language?.value">
+              {{ language?.name }}
+            </option>
+          </select>
+        </div>
+        <div style="display: flex; gap: 20px; align-items: center; width: fit-content;">
+          <select class="input-class" v-model="chosenCurrency" style="height: 40px; padding: 0px 12px;">
+            <option v-for="currency in props.currencyList" :value="currency?.sign">
+              {{ currency?.name }}
+            </option>
+          </select>
+        </div>
       </div>
-      <div style="display: flex; gap: 20px; align-items: center; width: fit-content;">
-        <select class="input-class" v-model="chosenCurrency" style="height: 40px; padding: 0px 12px;">
-          <option v-for="currency in props.currencyList" :value="currency?.sign">
-            {{ currency?.name }}
-          </option>
-        </select>
-      </div>
+
     </div>
   </header>
 </template>

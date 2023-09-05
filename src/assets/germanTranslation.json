@@ -7,7 +7,7 @@
         "saleDate": "Verkaufsdatum",
         "placeOfIssue": "Ort der Ausgabe",
         "dueDate": "Fälligkeitsdatum",
-        "paymentMethod": "Payment method",
+        "paymentMethod": "Bezahlverfahren",
         "differentIssueDate": "Ausstellungsdatum weicht vom Verkaufsdatum ab",
         "sellerTitle": "Verkäufertitel",
         "sellerData": "Verkäuferdaten",
@@ -73,6 +73,7 @@
             "value": "DE"
         }
     ],
+    "vatExemptTranslation": "MWSt.",
     "vatRateList": [
         {
             "name": "MWSt.",
