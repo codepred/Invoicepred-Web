@@ -9,21 +9,34 @@
 **Our Website:**
 [https://codepred.com/](https://codepred.com/)
 
-For more information contact us:
+
+
+**For more information contact us:**
 codepredpoznan@gmail.com
 
 
-Configuration:
+## Installation
 
+
+**Install the gem:**
+
+```bash
 npm install
 npm install vite@latest --save-dev
 npm install vue-router@4
 npm install @vuepic/vue-datepicker
+```
 
-Run for production:
 
+**Run for production:**
+
+
+```bash
 npm run build
+```
 
-Run localhost:
+**Run for localhost:**
 
+```bash
 npm run dev
+```
